@@ -57,3 +57,10 @@ textarea,
 select {
   font: inherit;
 }
+
+/* ### GENERAL STYLING ### */
+
+body {
+  font-family: var(--ff-space-mon);
+  font-weight: var(--fw-700);
+}
