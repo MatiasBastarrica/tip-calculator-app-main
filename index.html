@@ -21,9 +21,53 @@
     <title>Frontend Mentor | Tip calculator app</title>
   </head>
   <body>
-    <main>.</main>
-    Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount /
-    person Total / person Reset
+    <main>
+      <h1 class="sr-only">SPLITTER Tip Calculator</h1>
+      <div class="logo-container">
+        <img src="./images/logo.svg" alt="Splitter logo." />
+      </div>
+      <article class="tip-calculator-component">
+        <div class="tip-calculator__content">
+          <div>
+            <h2 class="calc-title"><label for="bill">Bill</label></h2>
+            <input type="number" name="bill" id="bill" />
+          </div>
+          <div>
+            <h2 class="calc-title">Select Tip %</h2>
+            <div class="tip-grid">
+              <button type="button" class="tip">5%</button>
+              <button type="button" class="tip">10%</button>
+              <button type="button" class="tip">15%</button>
+              <button type="button" class="tip">25%</button>
+              <button type="button" class="tip">50%</button>
+              <input
+                type="number"
+                name="custom-tip"
+                id="custom-tip"
+                placeholder="Custom"
+              />
+            </div>
+          </div>
+          <div>
+            <h2 class="calc-title">
+              <label for="num-of-people">Number of People</label>
+            </h2>
+            <input type="number" name="num-of-people" id="num-of-people" />
+          </div>
+        </div>
+        <div class="tip-calculator__display">
+          <div class="tip-amount-container">
+            <div class="tip-amount__text">Tip Amount <br />/ person</div>
+            <div class="tip-amount__number"></div>
+          </div>
+          <div class="total-container">
+            <div class="total__text">Total <br />/ person</div>
+            <div class="total__number"></div>
+          </div>
+          <button class="reset-btn" type="button">Reset</button>
+        </div>
+      </article>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
