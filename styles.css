@@ -212,6 +212,22 @@ body {
   letter-spacing: 1px;
 }
 
+/* ### ACTIVE STATES ### */
+
+.tip-calculator-component button:hover {
+  background-color: #9ee7df;
+  cursor: pointer;
+  color: var(--green-900);
+}
+
+.tip-calculator-component input:hover,
+.tip-calculator-component input:active,
+.tip-calculator-component input:focus {
+  outline: 2px solid #a0dbd7;
+  caret-color: #aedfdc;
+  cursor: pointer;
+}
+
 /* ### MEDIA QUERIES ### */
 
 @media (min-width: 40em) {
