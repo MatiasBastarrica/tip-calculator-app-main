@@ -2,7 +2,7 @@
 
 :root {
   /* # PRIMARY # */
-  --green-400: hsl(172, , 67%, 45%);
+  --green-400: hsl(172, 67%, 45%);
   /* # NEUTRAL # */
   --green-900: hsl(183, 100%, 15%);
   --grey-500: hsl(186, 14%, 43%);
@@ -58,9 +58,125 @@ select {
   font: inherit;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 /* ### GENERAL STYLING ### */
 
 body {
   font-family: var(--ff-space-mon);
   font-weight: var(--fw-700);
+  background-color: var(--grey-200);
+}
+
+/* ### TIP CALCULATOR COMPONENT ### */
+
+.logo-container {
+  margin-top: 3rem;
+  margin-inline: auto;
+  width: fit-content;
+}
+
+.tip-calculator-component {
+  margin-top: 2.5rem;
+  background-color: var(--white);
+  padding: 1.6rem 1.5rem;
+  border-radius: 1rem;
+}
+
+.tip-calculator-component button {
+  border: none;
+}
+
+.tip-calculator__content {
+  display: grid;
+  gap: 1.2rem;
+  padding-inline: 0.5rem;
+}
+
+.tip-calculator__content .calc-title {
+  color: var(--grey-500);
+  font-size: 0.975rem;
+  margin-bottom: 0.3rem;
+}
+
+.tip-calculator__content input {
+  width: 100%;
+  border: none;
+  background-color: var(--grey-50);
+  padding: 0.3rem 0.5rem;
+  font-size: 1.4rem;
+  text-align: end;
+  color: var(--green-900);
+  position: relative;
+  z-index: 0;
+}
+
+.tip-calculator__content input,
+.tip-calculator__content button {
+  border-radius: 0.3rem;
+}
+
+.tip-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.tip {
+  padding: 0.3rem 0.5rem;
+  font-size: 1.4rem;
+  background-color: var(--green-900);
+  color: var(--white);
+}
+
+.tip-calculator__display {
+  margin-top: 1.5rem;
+  background-color: var(--green-900);
+  display: grid;
+  gap: 1rem;
+  padding: 2rem 1.5rem 1.2rem;
+  border-radius: 0.8rem;
+}
+
+.tip-amount-container,
+.total-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.tip-amount__text,
+.total__text {
+  color: var(--grey-200);
+  font-size: 0.975rem;
+}
+
+.tip-calculator__display .subtitle {
+  color: var(--grey-400);
+  font-size: 0.9rem;
+}
+
+.tip-calculator__display .number-displayed {
+  color: var(--green-400);
+  font-size: 2.1rem;
+}
+
+.tip-calculator__display .reset-btn {
+  background-color: var(--green-400);
+  color: var(--green-900);
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0.3rem;
+  font-size: 1.185rem;
+  letter-spacing: 1px;
 }
