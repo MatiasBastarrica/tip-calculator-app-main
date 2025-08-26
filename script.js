@@ -20,6 +20,14 @@ function getSelectedTip() {
   }
 }
 
+function unselectTip() {
+  tipButtons.forEach((tipButton) => {
+    if (tipButton.classList.contains("checked")) {
+      tipButton.classList.remove("checked");
+    }
+  });
+}
+
 function calcTip() {
   let totalPerPerson;
   let tipAmountPerPerson;
@@ -59,11 +67,3 @@ tipButtons.forEach((tipButton) => {
     tipButton.classList.add("checked");
   });
 });
-
-function unselectTip() {
-  tipButtons.forEach((tipButton) => {
-    if (tipButton.classList.contains("checked")) {
-      tipButton.classList.remove("checked");
-    }
-  });
-}
