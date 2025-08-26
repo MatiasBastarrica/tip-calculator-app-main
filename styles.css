@@ -15,23 +15,6 @@
   --fw-700: 700;
 }
 
-/* ### UTILITY CLASSES ### */
-
-.sr-only:not(:focus):not(:active) {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-button.tip.checked {
-  background-color: #26c2ad;
-  color: var(--green-900);
-}
-
 /* ### CSS RESET ### */
 
 /* 1. Use a more-intuitive box-sizing model */
@@ -71,6 +54,34 @@ input::-webkit-inner-spin-button {
 
 input[type="number"] {
   -moz-appearance: textfield;
+}
+
+/* ### UTILITY CLASSES ### */
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+button.tip.checked {
+  background-color: #26c2ad;
+  color: var(--green-900);
+}
+
+button.reset-btn.disabled {
+  background-color: #0d686d;
+  color: #045b62;
+}
+
+button.reset-btn.disabled:hover {
+  background-color: #0d686d;
+  color: #045b62;
+  cursor: not-allowed;
 }
 
 /* ### GENERAL STYLING ### */
@@ -126,6 +137,10 @@ body {
   color: var(--green-900);
   position: relative;
   z-index: 0;
+}
+
+.tip-calculator__content input::placeholder {
+  color: #9eb5b5;
 }
 
 .input-container {

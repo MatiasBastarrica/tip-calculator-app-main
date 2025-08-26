@@ -31,7 +31,7 @@
           <div>
             <h2 class="calc-title"><label for="bill">Bill</label></h2>
             <div class="input-container bill-container">
-              <input type="number" name="bill" id="bill" />
+              <input type="number" name="bill" id="bill" placeholder="0" />
             </div>
           </div>
           <div>
@@ -55,7 +55,12 @@
               <label for="num-of-people">Number of People</label>
             </h2>
             <div class="input-container num-of-people-container">
-              <input type="number" name="num-of-people" id="num-of-people" />
+              <input
+                type="number"
+                name="num-of-people"
+                id="num-of-people"
+                placeholder="0"
+              />
             </div>
           </div>
         </div>
@@ -64,15 +69,15 @@
             <div class="tip-amount__text">
               Tip Amount <br /><span class="subtitle">/ person</span>
             </div>
-            <div class="tip-amount__number number-displayed"></div>
+            <div class="tip-amount__number number-displayed">$0.00</div>
           </div>
           <div class="total-container">
             <div class="total__text">
               Total <br /><span class="subtitle">/ person</span>
             </div>
-            <div class="total__number number-displayed"></div>
+            <div class="total__number number-displayed">$0.00</div>
           </div>
-          <button class="reset-btn" type="button">Reset</button>
+          <button class="reset-btn disabled" type="button">Reset</button>
         </div>
       </article>
     </main>

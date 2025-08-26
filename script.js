@@ -1,0 +1,69 @@
+const billInput = document.querySelector("#bill");
+const tipButtons = document.querySelectorAll(".tip");
+const customTipInput = document.querySelector("#custom-tip");
+const peopleNum = document.querySelector("#num-of-people");
+
+const tipAmountDisplay = document.querySelector(".tip-amount__number");
+const totalDisplay = document.querySelector(".total__number");
+
+function getSelectedTip() {
+  if (customTipInput.value) {
+    return customTipInput.value;
+  } else {
+    let tipBtnSelected;
+    tipButtons.forEach((tipButton) => {
+      if (tipButton.classList.contains("checked")) {
+        tipBtnSelected = parseInt(tipButton.textContent);
+      }
+    });
+    return tipBtnSelected;
+  }
+}
+
+function calcTip() {
+  let totalPerPerson;
+  let tipAmountPerPerson;
+
+  let totalTip = Number(billInput.value) * (getSelectedTip() / 100);
+  tipAmountPerPerson = (totalTip / Number(peopleNum.value)).toFixed(2);
+  totalPerPerson = (
+    (Number(billInput.value) + totalTip) /
+    Number(peopleNum.value)
+  ).toFixed(2);
+
+  return {
+    totalPerPerson,
+    tipAmountPerPerson,
+  };
+}
+
+function displayResults(totalPerPerson, tipAmountPerPerson) {
+  tipAmountDisplay.textContent = `$${tipAmountPerPerson}`;
+  totalDisplay.textContent = `$${totalPerPerson}`;
+}
+
+peopleNum.addEventListener("input", () => {
+  if (peopleNum.value >= 1 && billInput.value) {
+    const results = calcTip();
+    displayResults(results.totalPerPerson, results.tipAmountPerPerson);
+  }
+});
+
+customTipInput.addEventListener("input", () => {
+  unselectTip();
+});
+
+tipButtons.forEach((tipButton) => {
+  tipButton.addEventListener("click", () => {
+    unselectTip();
+    tipButton.classList.add("checked");
+  });
+});
+
+function unselectTip() {
+  tipButtons.forEach((tipButton) => {
+    if (tipButton.classList.contains("checked")) {
+      tipButton.classList.remove("checked");
+    }
+  });
+}
