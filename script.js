@@ -7,6 +7,9 @@ const tipAmountDisplay = document.querySelector(".tip-amount__number");
 const totalDisplay = document.querySelector(".total__number");
 const resetBtn = document.querySelector(".reset-btn");
 
+const invalidMsg = document.querySelector(".invalid-msg");
+let selectedTipButton = tipButtons[2];
+
 function getSelectedTip() {
   if (customTipInput.value) {
     return customTipInput.value;
@@ -67,22 +70,31 @@ function resetCalc() {
 
 peopleNum.addEventListener("input", () => {
   if (peopleNum.value >= 1 && billInput.value) {
+    invalidMsg.style.display = "none";
+    peopleNum.style.outline = "unset";
     const results = calcTip();
     displayResults(results.totalPerPerson, results.tipAmountPerPerson);
     enableBtn(resetBtn);
     resetBtn.addEventListener("click", () => {
       resetCalc();
     });
+  } else if (peopleNum.value === "0") {
+    invalidMsg.style.display = "block";
+    peopleNum.style.outline = "2px solid #b87f74";
   }
 });
 
 customTipInput.addEventListener("input", () => {
   unselectTip();
+  if (customTipInput.value === "") {
+    selectedTipButton.classList.add("checked");
+  }
 });
 
 tipButtons.forEach((tipButton) => {
   tipButton.addEventListener("click", () => {
     unselectTip();
     tipButton.classList.add("checked");
+    selectedTipButton = tipButton;
   });
 });

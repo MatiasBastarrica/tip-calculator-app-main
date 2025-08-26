@@ -171,6 +171,14 @@ body {
   background-image: url(./images/icon-person.svg);
 }
 
+.invalid-msg {
+  color: #b87f74;
+  display: none;
+  position: absolute;
+  top: -32px;
+  right: 0;
+}
+
 .tip-calculator__content input,
 .tip-calculator__content button {
   border-radius: 0.3rem;
