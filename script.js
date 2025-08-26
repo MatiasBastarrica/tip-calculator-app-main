@@ -61,11 +61,12 @@ function enableBtn(resetBtn) {
 function resetCalc() {
   billInput.value = "";
   customTipInput.value = "";
-  tipButtons[2].classList.add("checked");
   peopleNum.value = "";
   resetBtn.classList.add("disabled");
   tipAmountDisplay.textContent = "$0.00";
   totalDisplay.textContent = "$0.00";
+  selectedTipButton.classList.remove("checked");
+  tipButtons[2].classList.add("checked");
 }
 
 peopleNum.addEventListener("input", () => {
