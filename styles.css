@@ -27,6 +27,11 @@
   width: 1px;
 }
 
+button.tip.checked {
+  background-color: #26c2ad;
+  color: var(--green-900);
+}
+
 /* ### CSS RESET ### */
 
 /* 1. Use a more-intuitive box-sizing model */
