@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [My Solution](https://your-solution-url.com)
+- Solution URL: [My Solution](https://www.frontendmentor.io/solutions/tip-calculator-app-mb-gc4Qm_hgn0)
 - Live Site URL: [Live](https://matiasbastarrica.github.io/tip-calculator-app-main/)
 
 ## My process
